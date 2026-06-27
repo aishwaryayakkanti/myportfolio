@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { cn } from "@/lib/utils";
-import { Code, Cloud, Database, Server, Cpu, Brain, Layers } from "lucide-react";
+import { Code, Cloud, Database, Server, Brain, Layers } from "lucide-react";
 
 interface Skill {
   name: string;
   icon: React.ReactNode;
-  category: "frontend" | "backend" | "cloud" | "ai" | "other";
+  category: "programming" | "web" | "core" | "frameworks";
 }
 
 interface SkillTagsProps {
@@ -16,29 +16,22 @@ const SkillTags = ({ className }: SkillTagsProps) => {
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
 
   const skills: Skill[] = [
-    // Frontend
-    { name: "HTML", icon: <Code className="h-3 w-3" />, category: "frontend" },
-    { name: "CSS", icon: <Code className="h-3 w-3" />, category: "frontend" },
-    { name: "JavaScript", icon: <Code className="h-3 w-3" />, category: "frontend" },
-    { name: "React.js", icon: <Code className="h-3 w-3" />, category: "frontend" },
-    { name: "TypeScript", icon: <Code className="h-3 w-3" />, category: "frontend" },
-    { name: "Tailwind CSS", icon: <Code className="h-3 w-3" />, category: "frontend" },
+    { name: "Python", icon: <Code className="h-3 w-3" />, category: "programming" },
+    { name: "Java", icon: <Server className="h-3 w-3" />, category: "programming" },
+    { name: "C", icon: <Code className="h-3 w-3" />, category: "programming" },
+    { name: "JavaScript", icon: <Code className="h-3 w-3" />, category: "programming" },
 
-    // Backend
-    { name: "Java", icon: <Server className="h-3 w-3" />, category: "backend" },
-    { name: "Python", icon: <Code className="h-3 w-3" />, category: "backend" },
-    { name: "SQL", icon: <Database className="h-3 w-3" />, category: "backend" },
-    { name: "MongoDB", icon: <Database className="h-3 w-3" />, category: "backend" },
+    { name: "HTML", icon: <Code className="h-3 w-3" />, category: "web" },
+    { name: "CSS", icon: <Code className="h-3 w-3" />, category: "web" },
+    { name: "JavaScript", icon: <Code className="h-3 w-3" />, category: "web" },
 
-    // Cloud Technology
-    { name: "AWS", icon: <Cloud className="h-3 w-3" />, category: "cloud" },
-    { name: "Azure", icon: <Cloud className="h-3 w-3" />, category: "cloud" },
-    { name: "GCP", icon: <Cloud className="h-3 w-3" />, category: "cloud" },
+    { name: "Core Python", icon: <Brain className="h-3 w-3" />, category: "core" },
+    { name: "Data Structures & Algorithms (DSA)", icon: <Database className="h-3 w-3" />, category: "core" },
+    { name: "Linux", icon: <Cloud className="h-3 w-3" />, category: "core" },
 
-    // AI/ML
-    { name: "Machine Learning", icon: <Brain className="h-3 w-3" />, category: "ai" },
-    { name: "TensorFlow", icon: <Layers className="h-3 w-3" />, category: "ai" },
-    { name: "Azure ML", icon: <Brain className="h-3 w-3" />, category: "ai" },
+    { name: "NumPy", icon: <Layers className="h-3 w-3" />, category: "frameworks" },
+    { name: "Pandas", icon: <Layers className="h-3 w-3" />, category: "frameworks" },
+    { name: "Matplotlib", icon: <Layers className="h-3 w-3" />, category: "frameworks" },
   ];
 
   const filteredSkills = activeCategory
@@ -60,48 +53,48 @@ const SkillTags = ({ className }: SkillTagsProps) => {
           All
         </button>
         <button
-          onClick={() => setActiveCategory("frontend")}
+          onClick={() => setActiveCategory("programming")}
           className={cn(
             "text-xs px-4 py-1.5 rounded-full transition-all duration-300 border shadow-sm",
-            activeCategory === "frontend"
+            activeCategory === "programming"
               ? "bg-blue-500 text-white border-blue-500/80 shadow-md"
               : "bg-white/80 dark:bg-gray-800/80 text-foreground dark:text-gray-200 hover:bg-blue-500/10 border-border/30 dark:border-gray-700/30"
           )}
         >
-          Frontend
+          Programming Languages
         </button>
         <button
-          onClick={() => setActiveCategory("backend")}
+          onClick={() => setActiveCategory("web")}
           className={cn(
             "text-xs px-4 py-1.5 rounded-full transition-all duration-300 border shadow-sm",
-            activeCategory === "backend"
+            activeCategory === "web"
               ? "bg-green-500 text-white border-green-500/80 shadow-md"
               : "bg-white/80 dark:bg-gray-800/80 text-foreground dark:text-gray-200 hover:bg-green-500/10 border-border/30 dark:border-gray-700/30"
           )}
         >
-          Backend
+          Web Technologies
         </button>
         <button
-          onClick={() => setActiveCategory("cloud")}
+          onClick={() => setActiveCategory("core")}
           className={cn(
             "text-xs px-4 py-1.5 rounded-full transition-all duration-300 border shadow-sm",
-            activeCategory === "cloud"
+            activeCategory === "core"
               ? "bg-cyan-500 text-white border-cyan-500/80 shadow-md"
               : "bg-white/80 dark:bg-gray-800/80 text-foreground dark:text-gray-200 hover:bg-cyan-500/10 border-border/30 dark:border-gray-700/30"
           )}
         >
-          Cloud Technology
+          Core Skills
         </button>
         <button
-          onClick={() => setActiveCategory("ai")}
+          onClick={() => setActiveCategory("frameworks")}
           className={cn(
             "text-xs px-4 py-1.5 rounded-full transition-all duration-300 border shadow-sm",
-            activeCategory === "ai"
+            activeCategory === "frameworks"
               ? "bg-purple-500 text-white border-purple-500/80 shadow-md"
               : "bg-white/80 dark:bg-gray-800/80 text-foreground dark:text-gray-200 hover:bg-purple-500/10 border-border/30 dark:border-gray-700/30"
           )}
         >
-          AI/ML
+          Frameworks & Libraries
         </button>
       </div>
 

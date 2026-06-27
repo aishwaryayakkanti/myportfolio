@@ -73,22 +73,22 @@ const Hero = () => {
               <div className="absolute inset-0 rounded-full glowing-border"></div>
               <img
                 src={myLogo}
-                alt="Chandra Karravula Logo"
+                alt="Alexa Yem Logo"
                 className="w-full relative z-10 animate-pulse-subtle hover:animate-none transition-all"
               />
               <div className="absolute -inset-1 bg-gradient-to-r from-primary/10 to-blue-500/10 rounded-full blur-md opacity-0 group-hover:opacity-70 transition-opacity duration-300"></div>
             </div>
             <div className="bg-white/70 dark:bg-gray-800/70 shadow-soft border border-primary/20 backdrop-blur-md text-foreground px-5 py-2 rounded-full text-sm font-medium inline-flex items-center gap-2 futuristic-border tech-scanline">
               <span className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse-subtle"></span>
-              <span className="text-gradient">Software Developer | AI Enthusiast | Cloud Certified</span>
+              <span className="text-gradient">Full Stack & Python Developer</span>
             </div>
           </div>
 
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight md:leading-tight lg:leading-tight mb-8 animate-slide-down text-balance">
-            <span className="text-gradient glitch" title="Chandra Karravula">Chandra Karravula</span>
+            <span className="text-gradient glitch" title="Aishwarya Yakkanti">Aishwarya Yakkanti</span>
             <div className="h-2"></div>
             <span className="relative inline-block">
-              <span className="text-gradient">Building Intelligent Solutions</span>
+              <span className="text-gradient">Full Stack & Python Developer</span>
               <span className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-primary/60 to-blue-500/60 rounded-full"></span>
             </span>
           </h1>
@@ -103,7 +103,7 @@ const Hero = () => {
               <div className="text-xs text-gray-400 mx-auto">terminal</div>
             </div>
             <TerminalEffect
-              text="Welcome! I'm a software developer specializing in AI and cloud solutions."
+              text="Welcome! I'm Alexa Yem, a full stack and Python developer building modern solutions."
               className="text-blue-300"
               onComplete={() => setTerminalComplete(true)}
               prefix="$ "
