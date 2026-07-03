@@ -4,46 +4,26 @@ import ExperienceCard from "@/components/ExperienceCard";
 const Experience = () => {
   const experiences = [
     {
-      title: "AI Intern",
-      company: "CAP Corporate AI Solutions LLP",
-      location: "Chennai, India",
-      startDate: "FEB 2025",
-      endDate: "Present",
-      description: "Leading the development of responsive web applications using React, TypeScript, and Next.js. Implemented performance optimizations that improved page load times by 40%. Collaborated with cross-functional teams to deliver high-quality software products.",
+      title: "Full Stack Java Intern",
+      company: "SkillDzire",
+      location: "Remote",
+      startDate: "June 2025",
+      endDate: "",
+      description: "Developed a weather forecasting application using Java and OpenWeatherMap API. Implemented API integration and JSON data handling for real-time weather updates. Improved backend logic and application performance.",
+      project: "Weather Forecasting Application",
+      highlights: [],
+      skills: ["Java", "OpenWeatherMap API", "JSON", "HTTP Client"],
     },
     {
-      title: "Java Full Stack Developer",
-      company: "Anudip Foundation for Social Welfare",
-      location: "Kolkata, India",
-      startDate: "May 2024",
-      endDate: "Dec 2024",
-      description: "Developed and maintained full-stack applications using React, Core Java, Hibernate and MySQL. Collaborated with UX designers to implement responsive designs. Integrated third-party APIs and services to enhance application functionality.",
-    },
-    {
-      title: "IT Recruiting Intern",
-      company: "Precisely IT Management Services",
-      location: "Hyderabad, India",
-      startDate: "Feb 2024",
-      endDate: "May 2024",
-      description: "Performed end-to-end IT recruitment including sourcing, screening, coordinating interviews, and candidate follow-ups. Utilized Boolean search and professional platforms like LinkedIn and Naukri for headhunting technical talent. Maintained candidate databases using ATS and supported the hiring process for technical roles.",
-      skills: ["Boolean Search", "LinkedIn Recruiter", "ATS", "IT Hiring", "Sourcing", "Interview Coordination"]
-    },
-    {
-      title: "Trainee",
-      company: "Honeywell",
-      location: "Chennai, India",
-      startDate: "Jan 2023",
-      endDate: "Dec 2023",
-      description: "Completed training and certification for Microsoft Azure Administrator (AZ-102), gaining expertise in cloud-based solution management. Worked on hands-on labs involving AI solution architecture and implementation using Azure services. Applied Python for scripting AI models and automating workflows in a cloud environment.",
-      skills: ["Microsoft Azure", "Python", "Azure ML", "Azure Functions", "Azure Cognitive Services"]
-    },
-    {
-      title: "Junior Developer",
-      company: "Bytexl",
-      location: "Hyderabad, India",
-      startDate: "June 2022",
-      endDate: "June 2022",
-      description: "Assisted in the development of web applications for early-stage startups. Gained experience with frontend frameworks and backend technologies. Participated in code reviews and agile development processes.",
+      title: "DevOps Intern",
+      company: "CodeAlpha",
+      location: "Remote",
+      startDate: "March 2026",
+      endDate: "",
+      description: "Built and deployed a Docker-based web server project using Nginx. Managed container build, deployment, and port mapping. Gained practical experience in DevOps and deployment automation.",
+      project: "Docker Web Server Project",
+      highlights: [],
+      skills: ["Docker", "Nginx", "HTML", "CSS"],
     },
   ];
 
@@ -72,6 +52,8 @@ const Experience = () => {
                 startDate={exp.startDate}
                 endDate={exp.endDate}
                 description={exp.description}
+                project={exp.project}
+                highlights={exp.highlights}
                 isLeft={index % 2 === 0}
                 skills={exp.skills}
               />
@@ -85,7 +67,7 @@ const Experience = () => {
           <div className="max-w-3xl mx-auto text-center mb-12 fade-in-section">
             <h2 className="text-3xl font-bold mb-4">Key Achievements</h2>
             <p className="text-muted-foreground">
-              Highlights from my professional career that I'm particularly proud of.
+              Highlights from my internship journey that I’m particularly proud of.
             </p>
           </div>
 
@@ -95,10 +77,10 @@ const Experience = () => {
                 Performance
               </div>
               <h3 className="text-xl font-semibold mb-3">
-                40% Faster Load Times
+                Real-Time Weather Application
               </h3>
               <p className="text-muted-foreground">
-                Implemented advanced optimization techniques that reduced initial load times by 40%, significantly improving user experience and conversion rates.
+                Built a weather forecasting application using Java and OpenWeatherMap API, delivering accurate real-time weather updates and improving backend data processing efficiency.
               </p>
             </div>
 
@@ -107,10 +89,10 @@ const Experience = () => {
                 Leadership
               </div>
               <h3 className="text-xl font-semibold mb-3">
-                Team Growth & Mentorship
+                Project Development & Collaboration
               </h3>
               <p className="text-muted-foreground">
-                Mentored 5 junior developers who went on to become senior developers, establishing coding standards and best practices that improved team productivity.
+                Worked independently and collaboratively on internship projects, improving problem-solving skills and following structured development practices for better project execution.
               </p>
             </div>
 
@@ -119,10 +101,10 @@ const Experience = () => {
                 Innovation
               </div>
               <h3 className="text-xl font-semibold mb-3">
-                Microservices Architecture
+                Containerized Web Deployment
               </h3>
               <p className="text-muted-foreground">
-                Led the transition from a monolithic application to a microservices architecture, resulting in improved scalability and faster feature deployment.
+                Designed and deployed a Docker-based web server using Nginx, improving application portability, deployment consistency, and server management practices.
               </p>
             </div>
 
@@ -131,10 +113,10 @@ const Experience = () => {
                 Recognition
               </div>
               <h3 className="text-xl font-semibold mb-3">
-                Technology Excellence Award
+                Hands-on Industry Experience
               </h3>
               <p className="text-muted-foreground">
-                Received the company's annual Technology Excellence Award for developing an innovative solution that streamlined internal processes by 60%.
+                Successfully completed Full Stack Java and DevOps internships, gaining practical exposure to real-world development, deployment workflows, and modern technologies.
               </p>
             </div>
           </div>

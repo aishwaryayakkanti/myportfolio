@@ -1,12 +1,14 @@
 
 import { CheckCircle, Download } from "lucide-react";
+import myPhoto from "../assets/images/myphoto.jpg";
+import myResume from "../assets/resume/resume.pdf";
 
 const About = () => {
   const skills = [
-    { category: "Frontend", items: ["HTML", "CSS", "JavaScript", "React.js", "TypeScript", "Tailwind CSS"] },
-    { category: "Backend", items: ["Java", "Python", "SQL", "MongoDB"] },
-    { category: "Cloud Technology", items: ["AWS", "GCP", "Azure"] },
-    { category: "AI/ML", items: ["Machine Learning", "TensorFlow", "Azure ML"] },
+    { category: "Frontend", items: ["HTML", "CSS", "JavaScript"] },
+    { category: "Backend", items: ["Python", "Java", "SQL"] },
+    { category: "Cloud Technology", items: ["Cloud Computing", "AWS EC2", "Jenkins", "Docker"] },
+    { category: "AI/ML", items: ["Machine Learning", "TensorFlow", "Artificial Intelligence"] },
   ];
 
   return (
@@ -20,13 +22,16 @@ const About = () => {
                 I'm a passionate Full Stack Developer , building web applications and  experiences that solve real-world problems.
               </p>
               <p className="text-muted-foreground mb-6">
-                My journey in tech began at Acharya Nagarjuna University - RVR&JC College of Engineering, where I earned my degree in Computer Science. Since then, I've worked with startups and , helping in  build scalable, user-friendly applications that drive business growth.
+                My journey in technology began at Acharya Nagarjuna University – Bapatla Engineering College, where I am pursuing my B.Tech in Artificial Intelligence and Machine Learning. I have been improving my skills by working on projects and building user-friendly applications. I enjoy learning new technologies and solving real-world problems through technology.
               </p>
+              <p className="text-muted-foreground mb-6">
+                I enjoy building modern web applications and intelligent software solutions that solve real-world problems. With a strong academic record of 9.49 CGPA, I have developed skills in Python, Full Stack Development, Machine Learning, Artificial Intelligence, Cloud Computing, and Data Structures & Algorithms.
+                </p>
               <p className="text-muted-foreground mb-8">
                 When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, or sharing my knowledge through blog posts and community events.
               </p>
               <a
-                href="https://drive.google.com/file/d/1zFpvr_2gkjakYTxc9XzihfzLNsSOFa96/view?usp=sharing"
+                href={myResume}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-md font-medium transition-all duration-300 hover:shadow-md"
@@ -40,15 +45,15 @@ const About = () => {
               <div className="relative mx-auto group">
                 <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary/40 to-blue-500/40 blur-xl opacity-70 animate-pulse-subtle group-hover:opacity-100 transition-opacity"></div>
                 <a
-                  href="https://drive.google.com/file/d/1zFpvr_2gkjakYTxc9XzihfzLNsSOFa96/view?usp=sharing"
+                  href={myResume}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="cursor-pointer block aspect-square w-64 h-64 md:w-80 md:h-80 mx-auto rounded-full overflow-hidden shadow-xl border-4 border-white dark:border-gray-800 relative z-10 hover:border-primary transition-colors duration-300"
                   title="Click to view my resume"
                 >
                   <img
-                    src="https://media.licdn.com/dms/image/v2/D5603AQEAqipQcwrt_g/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1721897789534?e=1747872000&v=beta&t=nOWoRhKWg95l43hRxjwimi6SRMoydSBzU73ZJ7OqySc"
-                    alt="Chandra Karravula - Click to view resume"
+                    src={myPhoto}
+                    alt="Aishwarya Yakkanti"
                     className="w-full h-full object-cover"
                   />
                   <div className="absolute inset-0 bg-primary/20 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">

@@ -73,7 +73,7 @@ const Hero = () => {
               <div className="absolute inset-0 rounded-full glowing-border"></div>
               <img
                 src={myLogo}
-                alt="Alexa Yem Logo"
+                alt="Aishwarya Yakkanti Logo"
                 className="w-full relative z-10 animate-pulse-subtle hover:animate-none transition-all"
               />
               <div className="absolute -inset-1 bg-gradient-to-r from-primary/10 to-blue-500/10 rounded-full blur-md opacity-0 group-hover:opacity-70 transition-opacity duration-300"></div>
@@ -103,7 +103,7 @@ const Hero = () => {
               <div className="text-xs text-gray-400 mx-auto">terminal</div>
             </div>
             <TerminalEffect
-              text="Welcome! I'm Alexa Yem, a full stack and Python developer building modern solutions."
+              text="Welcome! I'm Aishwarya, a full stack and Python developer building modern solutions."
               className="text-blue-300"
               onComplete={() => setTerminalComplete(true)}
               prefix="$ "

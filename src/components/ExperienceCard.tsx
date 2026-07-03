@@ -1,5 +1,5 @@
 
-import { CalendarIcon, MapPin, Code } from "lucide-react";
+import { CalendarIcon, MapPin } from "lucide-react";
 
 interface ExperienceCardProps {
   title: string;
@@ -8,6 +8,8 @@ interface ExperienceCardProps {
   startDate: string;
   endDate: string;
   description: string;
+  project?: string;
+  highlights?: string[];
   isLeft?: boolean;
   skills?: string[];
 }
@@ -19,6 +21,8 @@ const ExperienceCard = ({
   startDate,
   endDate,
   description,
+  project,
+  highlights,
   isLeft = true,
   skills,
 }: ExperienceCardProps) => {
@@ -42,19 +46,36 @@ const ExperienceCard = ({
             <h4 className="text-primary font-medium">{company}</h4>
           </div>
 
-          <div className="flex flex-wrap gap-4 mb-4">
+          <div className="mb-4">
             <div className="flex items-center text-sm text-muted-foreground">
               <CalendarIcon className="h-4 w-4 mr-2 text-primary/70" />
-              <span>{startDate} — {endDate}</span>
+              <span>{startDate}{endDate ? ` — ${endDate}` : ""}</span>
             </div>
 
-            <div className="flex items-center text-sm text-muted-foreground">
-              <MapPin className="h-4 w-4 mr-2 text-primary/70" />
-              <span>{location}</span>
-            </div>
+            {location && (
+              <div className="flex items-center text-sm text-muted-foreground mt-1">
+                <MapPin className="h-4 w-4 mr-2 text-primary/70" />
+                <span>{location}</span>
+              </div>
+            )}
           </div>
 
-          <p className="text-muted-foreground text-balance mb-4 leading-relaxed">{description}</p>
+          <p className="text-muted-foreground text-balance mb-3 leading-relaxed">{description}</p>
+
+          {project && (
+            <div className="mb-3">
+              <span className="text-sm font-semibold text-foreground">Project:</span>{" "}
+              <span className="text-sm text-muted-foreground">{project}</span>
+            </div>
+          )}
+
+          {highlights && highlights.length > 0 && (
+            <div className="space-y-2 mb-4 text-sm text-muted-foreground">
+              {highlights.map((highlight, index) => (
+                <p key={index}>{highlight}</p>
+              ))}
+            </div>
+          )}
 
           {skills && skills.length > 0 && (
             <div className="mt-4 pt-3 border-t border-border/30 dark:border-gray-700/30">

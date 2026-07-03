@@ -18,12 +18,10 @@ const SkillTags = ({ className }: SkillTagsProps) => {
   const skills: Skill[] = [
     { name: "Python", icon: <Code className="h-3 w-3" />, category: "programming" },
     { name: "Java", icon: <Server className="h-3 w-3" />, category: "programming" },
-    { name: "C", icon: <Code className="h-3 w-3" />, category: "programming" },
     { name: "JavaScript", icon: <Code className="h-3 w-3" />, category: "programming" },
 
     { name: "HTML", icon: <Code className="h-3 w-3" />, category: "web" },
     { name: "CSS", icon: <Code className="h-3 w-3" />, category: "web" },
-    { name: "JavaScript", icon: <Code className="h-3 w-3" />, category: "web" },
 
     { name: "Core Python", icon: <Brain className="h-3 w-3" />, category: "core" },
     { name: "Data Structures & Algorithms (DSA)", icon: <Database className="h-3 w-3" />, category: "core" },

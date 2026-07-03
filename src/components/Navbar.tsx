@@ -4,8 +4,9 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Download } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
 
-// Import logo
+// Import logo and resume
 import myLogo from "../assets/logos/mylogo.png";
+import myResume from "../assets/resume/resume.pdf";
 
 const navItems = [
   { name: "Home", path: "/" },
@@ -62,7 +63,7 @@ const Navbar = () => {
           >
             <img
               src={myLogo}
-              alt="Chandra Karravula Logo"
+              alt="Aishwarya Yakkanti Logo"
               className="h-20 w-auto transform transition-transform hover:scale-105"
             />
           </Link>
@@ -82,7 +83,8 @@ const Navbar = () => {
               <ThemeToggle className="h-9 w-9" />
             </div>
             <a
-              href="https://drive.google.com/file/d/1zFpvr_2gkjakYTxc9XzihfzLNsSOFa96/view?usp=sharing"
+              href={myResume}
+              download="resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="ml-2 btn-primary"
@@ -133,7 +135,8 @@ const Navbar = () => {
               <ThemeToggle />
             </div>
             <a
-              href="https://drive.google.com/file/d/1zFpvr_2gkjakYTxc9XzihfzLNsSOFa96/view?usp=sharing"
+              href={myResume}
+              download="resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="block w-full text-center btn-primary mt-2"
