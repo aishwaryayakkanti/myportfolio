@@ -1,6 +1,7 @@
 
 import { Link } from "react-router-dom";
 import { Github, Linkedin, Mail } from "lucide-react";
+import { CONTACT_EMAIL, openEmailClient } from "@/lib/openEmail";
 
 // Import logo
 import myLogo from "../assets/logos/mylogo.png";
@@ -47,24 +48,32 @@ const Footer = () => {
                 <Linkedin className="h-5 w-5 text-foreground" />
               </a>
               <a
-                href="mailto:yakkantiaishwarya7@gmail.com"
+                href={`mailto:${CONTACT_EMAIL}`}
+                onClick={openEmailClient}
                 className="bg-white p-2.5 rounded-full shadow-soft hover:shadow-medium hover:-translate-y-1 transition-all duration-300 hover:bg-primary/5 hover:border-primary/10 border border-transparent"
-                aria-label="Email"
-              >
-                <Mail className="h-5 w-5 text-foreground" />
+                aria-label="Email">
+                <Mail className="h-5 w-5 text-foreground shrink-0" />
               </a>
+            </div>
+            <div className="flex flex-wrap justify-center gap-3 mb-4 text-xs text-muted-foreground">
+              <span>•</span>
+              <a
+                href="https://leetcode.com/u/aishu123_/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-primary transition-colors hover:underline"
+              >
+                LeetCode
+              </a>
+              <span>•</span>
               <a
                 href="https://www.hackerrank.com/profile/yakkantiaishwar1"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-white p-2.5 rounded-full shadow-soft hover:shadow-medium hover:-translate-y-1 transition-all duration-300 hover:bg-primary/5 hover:border-primary/10 border border-transparent"
-                aria-label="HackerRank"
-              ></a>
-            </div>
-             <div className="flex flex-wrap justify-center gap-3 mb-4 text-xs text-muted-foreground">
-              <a href="https://www.hackerrank.com/profile/yakkantiaishwar1" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors hover:underline">HackerRank</a>
-              <span>•</span>
-              <a href="https://neetcode.io/profile" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors hover:underline">NeetCode</a>
+                className="hover:text-primary transition-colors hover:underline"
+              >
+                HackerRank
+              </a>
             </div>
             <p className="text-muted-foreground text-sm">
               © {currentYear} <span className="text-foreground font-medium">Aishwarya Yakkanti</span>. All rights reserved.

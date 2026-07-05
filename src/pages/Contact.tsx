@@ -1,12 +1,10 @@
 
-import ContactForm from "@/components/ContactForm";
-import EmailJSCredentialsForm from "@/components/EmailJSCredentialsForm";
-import { Github, Linkedin, Mail, MapPin, MessageSquare, Phone } from "lucide-react";
+import { Github, Linkedin, Mail, MapPin, Phone } from "lucide-react";
+import { CONTACT_EMAIL, openEmailClient } from "@/lib/openEmail";
 
 const Contact = () => {
   return (
     <div className="pt-20">
-      <EmailJSCredentialsForm />
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-3xl mx-auto text-center mb-12 fade-in-section">
@@ -28,8 +26,12 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="text-sm font-medium text-muted-foreground mb-1">Email</h3>
-                      <a href="mailto:karravulachandra2001@gmail.com" className="text-foreground hover:text-primary transition-colors">
-                        karravulachandra2001@gmail.com
+                      <a
+                        href={`mailto:${CONTACT_EMAIL}`}
+                        onClick={openEmailClient}
+                        className="text-foreground hover:text-primary transition-colors"
+                      >
+                        {CONTACT_EMAIL}
                       </a>
                     </div>
                   </div>
@@ -40,8 +42,8 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="text-sm font-medium text-muted-foreground mb-1">Phone</h3>
-                      <a href="tel:+17032269433" className="text-foreground hover:text-primary transition-colors">
-                        +1 (703) 226-9433
+                      <a href="tel:+918125186487" className="text-foreground hover:text-primary transition-colors">
+                        +91 8125186487
                       </a>
                     </div>
                   </div>
@@ -52,7 +54,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="text-sm font-medium text-muted-foreground mb-1">Location</h3>
-                      <p className="text-foreground">Guntur, Andhra Pradesh</p>
+                      <p className="text-foreground">Bapatla, Andhra Pradesh, India</p>
                     </div>
                   </div>
                 </div>
@@ -61,7 +63,7 @@ const Contact = () => {
                   <h3 className="text-sm font-medium text-muted-foreground mb-4">Connect With Me</h3>
                   <div className="flex space-x-4">
                     <a
-                      href="https://github.com/chandrashivaji"
+                      href="https://github.com/aishwaryayakkanti"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="bg-white p-3 rounded-full shadow-soft hover:shadow-medium hover:-translate-y-1 transition-all duration-300"
@@ -70,7 +72,7 @@ const Contact = () => {
                       <Github className="h-5 w-5 text-foreground" />
                     </a>
                     <a
-                      href="https://www.linkedin.com/in/karravula-chandra-241306221/"
+                      href="https://www.linkedin.com/in/yakkanti-aishwarya/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="bg-white p-3 rounded-full shadow-soft hover:shadow-medium hover:-translate-y-1 transition-all duration-300"
@@ -79,7 +81,8 @@ const Contact = () => {
                       <Linkedin className="h-5 w-5 text-foreground" />
                     </a>
                     <a
-                      href="mailto:karravulachandra2001@gmail.com"
+                      href={`mailto:${CONTACT_EMAIL}`}
+                      onClick={openEmailClient}
                       className="bg-white p-3 rounded-full shadow-soft hover:shadow-medium hover:-translate-y-1 transition-all duration-300"
                       aria-label="Email"
                     >
@@ -89,14 +92,46 @@ const Contact = () => {
                 </div>
               </div>
             </div>
-            
+
             <div className="lg:col-span-3 fade-in-section">
               <div className="card-glass p-6 rounded-xl">
-                <div className="flex items-center mb-6">
-                  <MessageSquare className="h-5 w-5 text-primary mr-2" />
-                  <h2 className="text-2xl font-semibold">Send Me a Message</h2>
+                <h2 className="text-2xl font-semibold mb-6">Reach Me Directly</h2>
+
+                <div className="space-y-6">
+                  <div className="flex items-start">
+                    <div className="bg-secondary p-3 rounded-full mr-4">
+                      <Mail className="h-5 w-5 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="text-sm font-medium text-muted-foreground mb-1">Primary Email</h3>
+                      <a
+                        href={`mailto:${CONTACT_EMAIL}`}
+                        onClick={openEmailClient}
+                        className="text-foreground hover:text-primary transition-colors"
+                      >
+                        {CONTACT_EMAIL}
+                      </a>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start">
+                    <div className="bg-secondary p-3 rounded-full mr-4">
+                      <Phone className="h-5 w-5 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="text-sm font-medium text-muted-foreground mb-1">Phone</h3>
+                      <a href="tel:+918125186487" className="text-foreground hover:text-primary transition-colors">
+                        +91 8125186487
+                      </a>
+                    </div>
+                  </div>
+
+                  <div className="pt-2">
+                    <p className="text-muted-foreground">
+                      For opportunities and collaborations, email is the fastest way to reach me.
+                    </p>
+                  </div>
                 </div>
-                <ContactForm />
               </div>
             </div>
           </div>
@@ -111,7 +146,8 @@ const Contact = () => {
               I'm currently available for freelance work and open to discussing full-time opportunities. If you have a project that needs some creative coding, let's talk!
             </p>
             <a
-              href="mailto:karravulachandra2001@gmail.com"
+              href={`mailto:${CONTACT_EMAIL}`}
+              onClick={openEmailClient}
               className="inline-flex items-center bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-md font-medium transition-all duration-300 hover:shadow-md"
             >
               <Mail className="mr-2 h-5 w-5" />

@@ -1,34 +1,17 @@
 
 import { useState, useEffect, useRef } from "react";
 import CertificationCard from "@/components/CertificationCard";
-import { BookOpen, Sparkles, GraduationCap, Brain, Cpu, Network, Zap, BarChart2 } from "lucide-react";
+import { BookOpen, Sparkles, Brain, Cpu, Network, Zap, BarChart2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 // Import logo images
-import googleCloudLogo from "../assets/logos/googlecloud.jpg";
-import awsLogo from "../assets/logos/aws.jpg";
+import ciscoLogo from "../assets/images/cisco_networking_academy1_logo.jpg";
+import ibmLogo from "../assets/images/ibm_logo.jpg";
 import microsoftLogo from "../assets/logos/microsoft.jpg";
 import nptelLogo from "../assets/logos/nptel.png";
-import courseraLogo from "../assets/logos/download.png";
-import udemyLogo from "../assets/logos/og-image.png";
-
-// Import certificate images
-import iotCert from "../assets/New folder/IOT.png";
-import cloudComputingDistributedCert from "../assets/New folder/Cloud Computing and Distributed Systems.jpg";
-import cloudComputingCert from "../assets/New folder/Cloud computing.jpg";
-import pythonDataScienceCert from "../assets/New folder/Python for Data Science.jpg";
-import dataAnalyticsPythonCert from "../assets/New folder/Data Analytics with Python.jpg";
-import androidCert from "../assets/New folder/android.jpg";
-import joyCert from "../assets/New folder/joy.jpg";
-import pythonCert from "../assets/New folder/python.jpg";
-import windowsSecCert from "../assets/New folder/windows-sec.jpg";
-import javaCert from "../assets/New folder/java.jpg";
-import linuxCert from "../assets/New folder/linux.jpg";
-import windowsCert from "../assets/New folder/windows.jpg";
-import googleDataAnalyticsCert from "../assets/New folder/googledataanalytics.png";
 
 // Certification categories for filtering
-type Category = "All" | "Development" | "Design" | "Cloud" | "Data Science";
+type Category = "All" | "Programming" | "AI/ML" | "Web Development" | "NPTEL";
 
 const Certifications = () => {
   const [activeCategory, setActiveCategory] = useState<Category>("All");
@@ -77,173 +60,69 @@ const Certifications = () => {
 
   const certifications = [
     {
-      name: "Associate Cloud Engineer Certification",
-      issuer: "Google Cloud",
-      date: "2023",
-      link: "https://www.credly.com/badges/94368d2e-9e13-4c09-90ca-54c5ea9eba53/public_url", // Link to the credential URL
-      category: "Cloud",
-      image: googleCloudLogo, // Using the Google Cloud logo
+      name: "Python Essentials 1",
+      issuer: "Cisco",
+      date: "February 2026",
+      link: "https://drive.google.com/file/d/1DHP9HRxvolCZjdPPJfmsEPLHJPnu42H6/view?usp=sharing",
+      category: "Programming",
+      image: ciscoLogo,
     },
     {
-      name: "Cloud Digital Leader Certification",
-      issuer: "Google Cloud",
-      date: "2022",
-      link: "https://www.credly.com/badges/a374da7d-dadd-4522-90f9-67d23fb60c88/public_url", // Link to the credential URL
-      category: "Cloud",
-      image: googleCloudLogo, // Using the Google Cloud logo
+      name: "AI Fundamentals",
+      issuer: "IBM",
+      date: "October 2024",
+      link: "https://drive.google.com/file/d/1AVotGXXY1e2fgS2lBUsdcSB0KkDzFrnz/view?usp=sharing",
+      category: "AI/ML",
+      image: ibmLogo,
     },
     {
-      name: "AWS Academy Graduate - AWS Academy Cloud Foundations",
-      issuer: "Amazon Web Services Training and Certification",
-      date: "2022",
-      link: "https://www.credly.com/badges/9eefeda7-7044-4829-b5c5-a35f473f0eac/public_url", // Link to the credential URL
-      category: "Cloud",
-      image: awsLogo, // Using the AWS logo
-    },
-    {
-      name: "Microsoft Certified: Azure Fundamentals",
+      name: "Web Development Fundamentals",
       issuer: "Microsoft",
-      date: "2024",
-      link: "https://www.credly.com/badges/3efe931d-05b4-4458-ac38-d767c1eef23b/public_url", // Link to the credential URL
-      category: "Cloud",
-      image: microsoftLogo, // Using the Microsoft logo
-    },
-    {
-      name: "Microsoft Certified: Azure Fundamentals",
-      issuer: "Microsoft",
-      date: "2024",
-      link: "https://www.credly.com/badges/3efe931d-05b4-4458-ac38-d767c1eef23b/public_url", // Link to the credential URL
-      category: "Design",
-      image: microsoftLogo, // Using the Microsoft logo
-    },
-    {
-      name: "AWS Educate Introduction to Generative AI",
-      issuer: "AWS Academy",
-      date: "2025",
-      link: "https://www.credly.com/badges/c7fb63d9-1592-4b2d-9a72-d391f69ed562/public_url", // Link to the credential URL
-      category: "Design",
-      image: awsLogo, // Using the AWS logo
-    },
-    {
-      name: "Google Data Analytics",
-      issuer: "Coursera",
-      date: "May 2023",
-      link: googleDataAnalyticsCert, // Link to the full certificate image
-      category: "Data Science",
-      image: courseraLogo, // Using the Coursera logo
-    },
-    {
-      name: "Introduction to Industry 4.0 and Industrial Internet of Things",
-      issuer: "NPTEL",
-      date: "Jul-Oct 2023",
-      link: iotCert, // Link to the full certificate image
-      category: "Cloud",
-      image: nptelLogo, // Using the NPTEL logo
-    },
-    {
-      name: "Cloud Computing and Distributed Systems",
-      issuer: "NPTEL",
-      date: "Jan-Mar 2023",
-      link: cloudComputingDistributedCert, // Link to the full certificate image
-      category: "Cloud",
-      image: nptelLogo, // Using the NPTEL logo
+      date: "February 2026",
+      link: "https://drive.google.com/file/d/1Isgc-7yJ2wfjBuqz9TIj6LGRct8O25n2/view?usp=sharing",
+      category: "Web Development",
+      image: microsoftLogo,
     },
     {
       name: "Cloud Computing",
       issuer: "NPTEL",
-      date: "Jul-Oct 2022",
-      link: cloudComputingCert, // Link to the full certificate image
-      category: "Cloud",
-      image: nptelLogo, // Using the NPTEL logo
+      date: "January2025",
+      link: "https://drive.google.com/file/d/1wL4sg_y0ZUahy0yBXkbdtdU5vMlECI4p/view?usp=sharing",
+      category: "NPTEL",
+      image: nptelLogo,
     },
     {
-      name: "Python for Data Science",
+      name: "Introduction to Industry 4.0 and Industrial Internet of Things",
       issuer: "NPTEL",
-      date: "Jan-Feb 2022",
-      link: pythonDataScienceCert, // Link to the full certificate image
-      category: "Development",
-      image: nptelLogo, // Using the NPTEL logo
+      date: "January 2026",
+      link: "https://drive.google.com/file/d/13zGCoqo9SgTv-toztpjctyx5eiTB0lVY/view?usp=sharing",
+      category: "NPTEL",
+      image: nptelLogo,
     },
     {
-      name: "Data Analytics with Python",
+      name: "Social Networks",
       issuer: "NPTEL",
-      date: "2023",
-      link: dataAnalyticsPythonCert, // Link to the full certificate image
-      category: "Development",
-      image: nptelLogo, // Using the NPTEL logo
+      date: "January 2026",
+      link: "https://drive.google.com/file/d/1zAd_oUmPmCS00s9AwRBQyTt2HzPAjWYL/view?usp=drive_link",
+      category: "NPTEL",
+      image: nptelLogo,
     },
-    {
-      name: "Android App Development",
-      issuer: "Coursera",
-      date: "Apr 2024",
-      link: androidCert, // Link to the full certificate image
-      category: "Development",
-      image: courseraLogo, // Using the Coursera logo
-    },
-    {
-      name: "The Joy of Computing Using Python",
-      issuer: "NPTEL",
-      date: "2023",
-      link: joyCert, // Link to the full certificate image
-      category: "Development",
-      image: nptelLogo, // Using the NPTEL logo
-    },
-    {
-      name: "Applied Python: Building Projects with Python Programming",
-      issuer: "Udemy",
-      date: "2024",
-      link: pythonCert,
-      category: "Development",
-      image: udemyLogo,
-    },
-    {
-      name: "Windows Security",
-      issuer: "Udemy",
-      date: "2024",
-      link: windowsSecCert,
-      category: "Development",
-      image: udemyLogo,
-    },
-    {
-      name: "Java Training Crash Course for Java Beginners",
-      issuer: "Udemy",
-      date: "2024",
-      link: javaCert,
-      category: "Development",
-      image: udemyLogo,
-    },
-    {
-      name: "Linux Modules",
-      issuer: "Udemy",
-      date: "2024",
-      link: linuxCert,
-      category: "Development",
-      image: udemyLogo,
-    },
-    {
-      name: "Windows Command Mastery for Ethical Hackers",
-      issuer: "Udemy",
-      date: "2024",
-      link: windowsCert,
-      category: "Development",
-      image: udemyLogo,
-    },
-  ];
+  ] as const;
 
   const filteredCertifications = activeCategory === "All"
     ? certifications
-    : certifications.filter(cert => cert.category === activeCategory);
+    : certifications.filter((cert) => cert.category === activeCategory);
 
   // Category metadata with icons
   const categoryMeta = {
     "All": { icon: Sparkles, color: "bg-gradient-to-r from-blue-500 to-indigo-500" },
-    "Development": { icon: Cpu, color: "bg-gradient-to-r from-emerald-500 to-teal-500" },
-    "Design": { icon: GraduationCap, color: "bg-gradient-to-r from-purple-500 to-pink-500" },
-    "Cloud": { icon: Network, color: "bg-gradient-to-r from-blue-400 to-cyan-500" },
-    "Data Science": { icon: BarChart2, color: "bg-gradient-to-r from-amber-500 to-orange-500" }
+    "Programming": { icon: Cpu, color: "bg-gradient-to-r from-emerald-500 to-teal-500" },
+    "AI/ML": { icon: Brain, color: "bg-gradient-to-r from-purple-500 to-pink-500" },
+    "Web Development": { icon: Network, color: "bg-gradient-to-r from-blue-400 to-cyan-500" },
+    "NPTEL": { icon: BarChart2, color: "bg-gradient-to-r from-amber-500 to-orange-500" }
   };
 
-  const categories: Category[] = ["All", "Development", "Design", "Cloud", "Data Science"];
+  const categories: Category[] = ["All", "Programming", "AI/ML", "Web Development", "NPTEL"];
 
   return (
     <div className="pt-20">
@@ -360,7 +239,7 @@ const Certifications = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="bg-white/60 backdrop-blur-md rounded-xl p-6 shadow-soft border border-primary/20 hover:shadow-medium transition-all duration-300 hover:-translate-y-1 futuristic-border ai-glow">
                 <div className="bg-gradient-to-br from-primary/20 to-blue-500/20 p-3 rounded-full w-14 h-14 flex items-center justify-center mx-auto mb-4 border border-primary/10 futuristic-glow">
                   <BookOpen className="h-6 w-6 text-primary" />
@@ -383,14 +262,6 @@ const Certifications = () => {
                 </div>
                 <h3 className="text-lg font-semibold mb-2">AI Research Projects</h3>
                 <p className="text-foreground/80">Building innovative AI-powered projects to apply and reinforce advanced technical skills</p>
-              </div>
-            </div>
-
-            <div className="inline-flex items-center bg-white/70 px-8 py-4 rounded-xl shadow-medium border border-primary/20 animate-float futuristic-glow glowing-border">
-              <span className="mr-3 text-foreground/80">Currently exploring:</span>
-              <div className="relative">
-                <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 to-blue-500/20 rounded-lg blur-sm opacity-70"></div>
-                <span className="relative font-semibold text-gradient z-10">Neural Networks & Deep Learning</span>
               </div>
             </div>
           </div>

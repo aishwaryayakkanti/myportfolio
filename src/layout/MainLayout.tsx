@@ -17,7 +17,7 @@ const MainLayout = ({ children }: MainLayoutProps) => {
     window.scrollTo(0, 0);
   }, [location.pathname]);
 
-  // Setup intersection observer for animation
+  // Setup intersection observer for animation with MutationObserver
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -30,25 +30,44 @@ const MainLayout = ({ children }: MainLayoutProps) => {
       { threshold: 0.1, rootMargin: "0px 0px -100px 0px" }
     );
 
-    // Add a small delay to ensure DOM is fully loaded
-    setTimeout(() => {
-      const sections = document.querySelectorAll(".fade-in-section");
+    const observeSection = (section: Element) => {
+      // If already visible, no need to observe again
+      if (section.classList.contains("is-visible")) return;
 
-      // First make all sections in the viewport visible immediately
-      sections.forEach((section) => {
-        const rect = section.getBoundingClientRect();
-        if (rect.top < window.innerHeight) {
-          section.classList.add("is-visible");
-        }
-        observer.observe(section);
+      const rect = section.getBoundingClientRect();
+      if (rect.top < window.innerHeight) {
+        section.classList.add("is-visible");
+      }
+      observer.observe(section);
+    };
+
+    // Observe initial sections
+    const sections = document.querySelectorAll(".fade-in-section");
+    sections.forEach(observeSection);
+
+    // Watch for newly added sections using MutationObserver
+    const mutationObserver = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        mutation.addedNodes.forEach((node) => {
+          if (node instanceof HTMLElement) {
+            if (node.classList.contains("fade-in-section")) {
+              observeSection(node);
+            }
+            const childSections = node.querySelectorAll(".fade-in-section");
+            childSections.forEach(observeSection);
+          }
+        });
       });
-    }, 100);
+    });
+
+    mutationObserver.observe(document.body, {
+      childList: true,
+      subtree: true,
+    });
 
     return () => {
-      const sections = document.querySelectorAll(".fade-in-section");
-      sections.forEach((section) => {
-        observer.unobserve(section);
-      });
+      observer.disconnect();
+      mutationObserver.disconnect();
     };
   }, [location.pathname]);
 

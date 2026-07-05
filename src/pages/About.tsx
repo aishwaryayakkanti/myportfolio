@@ -1,7 +1,8 @@
 
 import { CheckCircle, Download } from "lucide-react";
 import myPhoto from "../assets/images/myphoto.jpg";
-import myResume from "../assets/resume/resume.pdf";
+
+const resumeUrl = "/Aishwarya_Resume.pdf";
 
 const About = () => {
   const skills = [
@@ -31,7 +32,7 @@ const About = () => {
                 When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, or sharing my knowledge through blog posts and community events.
               </p>
               <a
-                href={myResume}
+                href={resumeUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-md font-medium transition-all duration-300 hover:shadow-md"
@@ -45,7 +46,7 @@ const About = () => {
               <div className="relative mx-auto group">
                 <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary/40 to-blue-500/40 blur-xl opacity-70 animate-pulse-subtle group-hover:opacity-100 transition-opacity"></div>
                 <a
-                  href={myResume}
+                  href={resumeUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="cursor-pointer block aspect-square w-64 h-64 md:w-80 md:h-80 mx-auto rounded-full overflow-hidden shadow-xl border-4 border-white dark:border-gray-800 relative z-10 hover:border-primary transition-colors duration-300"

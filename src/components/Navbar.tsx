@@ -6,7 +6,8 @@ import ThemeToggle from "./ThemeToggle";
 
 // Import logo and resume
 import myLogo from "../assets/logos/mylogo.png";
-import myResume from "../assets/resume/resume.pdf";
+
+const resumeUrl = "/Aishwarya_Resume.pdf";
 
 const navItems = [
   { name: "Home", path: "/" },
@@ -83,8 +84,7 @@ const Navbar = () => {
               <ThemeToggle className="h-9 w-9" />
             </div>
             <a
-              href={myResume}
-              download="resume.pdf"
+              href={resumeUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="ml-2 btn-primary"
@@ -135,8 +135,7 @@ const Navbar = () => {
               <ThemeToggle />
             </div>
             <a
-              href={myResume}
-              download="resume.pdf"
+              href={resumeUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="block w-full text-center btn-primary mt-2"

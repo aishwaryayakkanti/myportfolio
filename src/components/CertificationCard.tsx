@@ -1,5 +1,5 @@
 
-import { Award, Calendar, ExternalLink, BookOpen, GraduationCap, Sparkles, Cpu, Network, BarChart2, Zap, X } from "lucide-react";
+import { Award, Calendar, ExternalLink, BookOpen, Brain, Sparkles, Cpu, Network, BarChart2, Zap, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useState, useEffect, useRef } from "react";
 
@@ -49,13 +49,13 @@ const CertificationCard = ({
   // Get appropriate icon and color based on category
   const getCategoryMeta = (category: string) => {
     switch(category) {
-      case "Development":
+      case "Programming":
         return { icon: Cpu, color: "from-emerald-500 to-teal-500" };
-      case "Design":
-        return { icon: GraduationCap, color: "from-purple-500 to-pink-500" };
-      case "Cloud":
+      case "AI/ML":
+        return { icon: Brain, color: "from-purple-500 to-pink-500" };
+      case "Web Development":
         return { icon: Network, color: "from-blue-400 to-cyan-500" };
-      case "Data Science":
+      case "NPTEL":
         return { icon: BarChart2, color: "from-amber-500 to-orange-500" };
       default:
         return { icon: Sparkles, color: "from-blue-500 to-indigo-500" };
