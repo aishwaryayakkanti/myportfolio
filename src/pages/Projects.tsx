@@ -76,7 +76,7 @@ const projects: Project[] = [
     fullDescription: "An object detection system built with TensorFlow that can identify and locate multiple objects in images and video streams. The project implements state-of-the-art deep learning models for real-time object detection with high accuracy. It includes both still image processing and live webcam detection capabilities, with customizable confidence thresholds and support for multiple object classes.",
     technologies: ["Python", "TensorFlow", "Deep Learning", "Computer Vision", "Jupyter Notebook"],
     image: "https://images.unsplash.com/photo-1535378917042-10a22c95931a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-    githubUrl: "https://github.com/karravulachandra/Object-Detection-By-Ankan",
+    githubUrl: "https://github.com/aishwaryayakkanti/Object-Detection-By-Aishu.git",
     categories: ["AI/ML"],
     featured: true,
   },
